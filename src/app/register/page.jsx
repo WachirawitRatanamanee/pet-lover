@@ -38,10 +38,22 @@ const Signup = () => {
     formData.append("username", username);
     formData.append("password", password);
 
-    // logic to send data to the server
-    // logic here
+    try {
+      const response = await fetch("/api/auth", {
+        method: "POST",
+        body: formData,
+      });
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
 
-    router.push("/login");
+      const data = await response.json();
+      console.log(data);
+      alert(data.message);
+      if (response.ok) router.push("/login");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

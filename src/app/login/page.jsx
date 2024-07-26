@@ -38,10 +38,18 @@ const Signin = () => {
     formData.append("username", username);
     formData.append("password", password);
 
-    // logic to send data to the server
-    // logic here
-
-    router.push("/");
+    try {
+      const response = await fetch("/api/auth", {
+        method: "DELETE",
+        body: formData,
+      });
+      const data = await response.json();
+      console.log(data);
+      alert(data.message);
+      if (response.ok) router.push("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

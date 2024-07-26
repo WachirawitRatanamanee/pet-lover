@@ -13,7 +13,7 @@ const LoginForm = ({ handleSubmit, error = {} }) => {
         id="username"
       />
       {error.username && (
-        <label className="text-red-500  absolute top-[30%]" for="username">
+        <label className="text-red-500  absolute top-[30%]" htmlFor="username">
           {error.username}
         </label>
       )}
@@ -24,7 +24,7 @@ const LoginForm = ({ handleSubmit, error = {} }) => {
         id="password"
       />
       {error.password && (
-        <label className="text-red-500  absolute top-[55%]" for="password">
+        <label className="text-red-500  absolute top-[55%]" htmlFor="password">
           {error.password}
         </label>
       )}

@@ -106,16 +106,16 @@ export default function Home() {
       {isAdmin && isEdit && (
         <div>
           <button
-            className="absolute bottom-[5%] right-[5%] bg-red-500 p-2 rounded-full h-[5%] w-auto"
+            className="absolute bottom-[5%] right-[5%] bg-red-300 hover:bg-red-500 p-2 rounded-full h-[5%] w-auto"
             onClick={() => setIsEdit(!isEdit)}
           >
-            Cancel!
+            Cancel
           </button>
           <button
-            className="absolute bottom-[5%] right-[10%] bg-blue-500 p-2 rounded-full h-[5%] w-auto"
+            className="absolute bottom-[5%] right-[10%] bg-blue-300 hover:bg-blue-500 p-2 rounded-full h-[5%] w-auto"
             onClick={() => setIsEdit(!isEdit)}
           >
-            Save Change!
+            Save Change
           </button>
         </div>
       )}
